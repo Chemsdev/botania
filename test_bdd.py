@@ -30,3 +30,5 @@ def endpoint_db(data: dict):
 
 # Appeler la fonction endpoint_db depuis Streamlit.
 endpoint_db(data=({"prediction" : "ta pas 2 balles","probability": 4},))
+
+# a faire
