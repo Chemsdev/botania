@@ -45,7 +45,7 @@ def predict_species(iris: IrisSpecies):
     }
 
 # end-point pour insérer les données.
-
+@app.post('/insert')
 def endpoint_db(data: dict):
     engine = connect()
     with engine.connect() as con:
