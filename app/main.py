@@ -57,6 +57,7 @@ def endpoint_db(data: dict):
                 con.execute(statement, **i)
         else:
             con.execute(statement, data)
+    engine.close()
 
 
 
