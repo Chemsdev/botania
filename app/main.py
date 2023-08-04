@@ -57,7 +57,7 @@ def endpoint_db(data: dict):
                 con.execute(statement, **i)
         else:
             con.execute(statement, data)
-    # engine.close()
+    engine.dispose()
 
 # Appeler la fonction endpoint_db depuis Streamlit.
 # endpoint_db(data=({"prediction" : "touk touk toukt touk","probability": 4},))
