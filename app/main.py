@@ -45,14 +45,16 @@ def predict_species(iris: IrisSpecies):
 
 # end-point pour insérer les données.
 @app.post('/insert')
-def endpoint_db(data: list):
+def endpoint_db(data: dict):
     engine = connect()
     with engine.connect() as con:
         statement = text("""
             INSERT INTO prediction (prediction, probability) VALUES (:prediction, :probability)
         """)
-        for item in data:
-            con.execute(statement, prediction=item['prediction'], probability=item['probability'])
+        if isinstance(data, dict):
+            con.execute(statement, **data)
+        elif isinstance(data, list):
+            con.execute(statement, *data)
     engine.dispose()
 
 
