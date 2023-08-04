@@ -24,7 +24,6 @@ def connect():
     engine = create_engine(f"mysql://{db_username}:{db_password}@{db_host}/{db_database}")
     return engine
 
-
 # ==========================================================================================>
 
 # end-point pour tester.
