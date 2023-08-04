@@ -46,7 +46,7 @@ def predict_species(iris: IrisSpecies):
 
 # end-point pour insérer les données.
 @app.post('/insert')
-def endpoint_db(data: dict):
+def endpoint_db(data:dict):
     engine = connect()
     with engine.connect() as con:
         statement = text("""
@@ -59,7 +59,5 @@ def endpoint_db(data: dict):
             con.execute(statement, data)
     engine.dispose()
 
-# Appeler la fonction endpoint_db depuis Streamlit.
-# endpoint_db(data=({"prediction" : "touk touk toukt touk","probability": 4},))
 
 
