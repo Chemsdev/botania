@@ -60,6 +60,6 @@ def endpoint_db(data: dict):
     engine.close()
 
 # Appeler la fonction endpoint_db depuis Streamlit.
-endpoint_db(data=({"prediction" : "touk touk toukt touk","probability": 4},))
+# endpoint_db(data=({"prediction" : "touk touk toukt touk","probability": 4},))
 
 
